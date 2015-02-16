@@ -1,0 +1,125 @@
+{
+  "name": "<%= _.slugify(appname) %>",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "2.1.3",
+    "requirejs": "2.1.16",
+    "requirejs-text": "2.0.13",
+    "backbone": "1.1.2",
+    "underscore": "1.7.0",
+    "backbone.marionette": "2.3.2",
+    "backbone.paginator": "2.0.2",
+    "backbone.wreqr": "1.3.2",
+    "backbone.babysitter": "0.1.6",
+    "backgrid": "0.3.5",
+    "backgrid-paginator": "0.3.5",
+    "backbone-forms": "0.14.0",
+    "backbone.bootstrap-modal": "0.9.0",
+    "bootbox": "4.3.0",
+    "bootstrap": "3.3.2",
+    "globalize": "0.1.1",
+    "jquery-ui": "1.10.3",
+    "x-editable": "1.5.1",
+    "jquery-toggles": "3.1.3",
+    "tag-it": "*",
+    "jquery-timeago": "1.4.1",
+    "pines-notify": "2.0.1",
+    "moment": "2.9.0",
+    "require-handlebars-plugin": "0.11.2"
+  },
+  "devDependencies": {},
+  "directory": "<%= bowerDirectory %>",
+  "resolutions": {
+    "underscore": "1.7.0",
+    "jquery": "2.1.3"
+  },
+  "exportsOverride": {
+    "jquery": {
+      "js": [
+        "jquery*.js",
+        "jquery.min.map"
+      ]
+    },
+    "jquery-ui": {
+      "js": [
+        "ui/minified/jquery-ui.min.js"
+      ],
+      "css": "themes/smoothness"
+    },
+    "bootstrap": {
+      "js": "docs/assets/js/bootstrap.*js"
+    },
+    "backbone": {
+      "js": "backbone*.js"
+    },
+    "underscore": {
+      "js": "underscore*.js"
+    },
+    "backbone.marionette": {
+      "js": "lib/core/amd/backbone.marionette*.js"
+    },
+    "backbone.wreqr": {
+      "js": "lib/amd/backbone.wreqr*.js"
+    },
+    "backbone.babysitter": {
+      "js": "lib/amd/backbone.babysitter*.js"
+    },
+    "backbone-paginator": {
+      "js": "lib/backbone-paginator*.js"
+    },
+    "backgrid-paginator": {
+      "js": "backgrid-paginator.js",
+      "css": "backgrid-paginator.css"
+    },
+    "backbone-forms": {
+      "js": "distribution.amd/**/*.js",
+      "css": "distribution.amd/templates/bootstrap.css"
+    },
+    "backbone.bootstrap-modal": {
+      "js": "src/backbone.bootstrap-modal.js"
+    },
+    "requirejs-text": {
+      "js": "text.js"
+    },
+    "jquery-toggles": {
+      "js": "toggles.*.js",
+      "css": "toggles.css"
+    },
+    "moment": {
+      "js": "min/moment-with-langs.*.js"
+    },
+    "require-handlebars-plugin": {
+      "js": [
+        "Handlebars.js",
+        "hbs.js",
+        "hbs/i18nprecompile.js",
+        "hbs/json2.js"
+      ]
+    },
+    "bootbox": {
+      "js": "bootbox.js"
+    },
+    "pines-notify": {
+      "js": "jquery.pnotify*.js",
+      "css": "jquery.pnotify*.css"
+    },
+    "x-editable": {
+      "js": "dist/bootstrap-editable/js/bootstrap-editable*.js",
+      "css": "dist/bootstrap-editable/css/bootstrap-editable.css",
+      "img": "dist/bootstrap-editable/img/clear.png"
+    },
+    "requirejs": {
+      "js": "require.js"
+    },
+    "globalize": {
+      "js": "lib/globalize.js"
+    },
+    "tag-it": {
+      "js": "js/tag-it*.js",
+      "css": "css/jquery.tagit.css"
+    },
+    "jquery-timeago": {
+      "js": "jquery.timeago.js"
+    }
+  }
+}

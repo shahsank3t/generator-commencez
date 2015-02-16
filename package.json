@@ -1,0 +1,36 @@
+{
+  "name" : "generator-commencez",
+  "description": "Yeoman generator for initial setup of web application's UI framework using backbone, marionette and various other javascript libraries.",
+  "version" : "0.1.0",
+  "keywords": [
+    "yeoman-generator",
+    "yeoman",
+    "generator",
+    "marionette",
+    "backbone",
+    "framework",
+    "mvc"
+  ],
+  "homepage": "https://github.com/shahsank3t/generator-commencez",
+  "bugs": "https://github.com/shahsank3t/generator-commencez/issues",
+  "author": "Sanket Shah (clone of generator-marionette)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shahsank3t/generator-commencez.git"
+  },
+  "dependencies": {
+    "yeoman-generator": "git://github.com/mrichard/generator.git",
+    "underscore.string": "~2.3.1",
+    "generator-buster": "~0.0.1",
+    "chalk": "~0.2.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "BSD"
+    }
+  ]
+}
