@@ -237,9 +237,9 @@ module.exports = function(grunt) {
             'libs/bower/requirejs-text/js/text.js',
             'libs/bower/x-editable/js/bootstrap-editable.js',
             'scripts/{,*/}*.js',
-            'scripts/modules/{,*/}/{,*/}*.js',
-            'scripts/views/{,*/}/{,*/}*.js',
-            'scripts/ms/{,*/}/{,*/}*.js',
+            'scripts/routers/{,*/}/{,*/}*.js',
+            'scripts/helpers/{,*/}/{,*/}*.js',
+            'scripts/fs/{,*/}/{,*/}*.js',
           ]
         }]
       }
@@ -257,6 +257,22 @@ module.exports = function(grunt) {
         },
       },
       all: {}
+    },
+
+    bowercopy: {
+      options: {
+        srcPrefix: 'bower_components'
+      },
+      scripts: {
+        options: {
+          destPrefix: 'WebContent/libs/bower'
+        },
+        files: {
+          'jquery/dist/jquery.js': 'jquery/js/jquery.js',
+          'jquery/dist/jquery.min.js': 'jquery/js/jquery.min.js',
+          'jquery/dist/jquery.min.map': 'jquery/js/jquery.min.map'
+        }
+      }
     },
 
     handlebars: {
@@ -314,7 +330,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('default', [
-    //'jshint',
+    //'jshint', 
     'test',
     'build'
   ]);

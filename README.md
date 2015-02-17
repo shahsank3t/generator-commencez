@@ -48,7 +48,11 @@ To bootstrap a new project simply run:
 
     $ yo commencez
 
-To install dependencies:
+To install bower components:
+
+    $ bower install
+
+To install dev-dependencies:
 	
 	$ npm install
 

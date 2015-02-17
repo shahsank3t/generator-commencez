@@ -126,6 +126,7 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.copy('scripts/utils/FSLangSupport.js', _mainJsDir + 'utils/FSLangSupport.js');
   this.copy('scripts/utils/FSOverrides.js', _mainJsDir + 'utils/FSOverrides.js');
   this.copy('scripts/utils/FSUtils.js', _mainJsDir + 'utils/FSUtils.js');
+  this.copy('scripts/utils/FSTableLayout.js', _mainJsDir + 'utils/FSTableLayout.js');
   this.copy('scripts/helpers/FSHelpers.js', _mainJsDir + 'utils/FSHelpers.js');
 
   this.copy('scripts/modules/Vent.js', _mainJsDir + 'modules/Vent.js');

@@ -1,36 +1,33 @@
 {
-  "name" : "generator-commencez",
-  "description": "Yeoman generator for initial setup of web application's UI framework using backbone, marionette and various other javascript libraries.",
-  "version" : "0.1.0",
-  "keywords": [
-    "yeoman-generator",
-    "yeoman",
-    "generator",
-    "marionette",
-    "backbone",
-    "framework",
-    "mvc"
-  ],
-  "homepage": "https://github.com/shahsank3t/generator-commencez",
-  "bugs": "https://github.com/shahsank3t/generator-commencez/issues",
-  "author": "Sanket Shah (clone of generator-marionette)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shahsank3t/generator-commencez.git"
-  },
+  "name": "generator-commencez",
+  "version": "0.0.1",
   "dependencies": {
-    "yeoman-generator": "git://github.com/mrichard/generator.git",
-    "underscore.string": "~2.3.1",
-    "generator-buster": "~0.0.1",
-    "chalk": "~0.2.0"
+    "underscore": "1.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.0",
+    "grunt-contrib-concat": "~0.2.0",
+    "grunt-contrib-handlebars": "~0.5.8",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.4.3",
+    "grunt-contrib-cssmin": "~0.6.0",
+    "grunt-contrib-connect": "0.3.0",
+    "grunt-contrib-clean": "0.4.0",
+    "grunt-contrib-htmlmin": "0.1.3",
+    "grunt-contrib-imagemin": "0.1.4",
+    "grunt-contrib-livereload": "0.1.2",
+    "grunt-mocha": "~0.3.1",
+    "grunt-bower-requirejs": "~0.4.1",
+    "grunt-usemin": "~0.1.10",
+    "grunt-contrib-requirejs": "",
+    "grunt-open": "~0.2.0",
+    "matchdep": "~0.1.2",
+    "grunt-exec": "~0.4.2",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-bower-task": "~0.3.2"
+  },
   "engines": {
     "node": ">=0.8.0"
-  },
-  "licenses": [
-    {
-      "type": "BSD"
-    }
-  ]
+  }
 }
