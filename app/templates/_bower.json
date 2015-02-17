@@ -13,6 +13,7 @@
     "backbone.babysitter": "0.1.6",
     "backgrid": "0.3.5",
     "backgrid-paginator": "0.3.5",
+    "backgrid-filter":"*",
     "backbone-forms": "0.14.0",
     "backbone.bootstrap-modal": "0.9.0",
     "bootbox": "4.3.0",
@@ -25,7 +26,8 @@
     "jquery-timeago": "1.4.1",
     "pines-notify": "2.0.1",
     "moment": "2.9.0",
-    "require-handlebars-plugin": "0.11.2"
+    "require-handlebars-plugin": "0.11.2",
+    "handlebars": "3.0.0"
   },
   "devDependencies": {},
   "directory": "<%= bowerDirectory %>",
@@ -56,13 +58,13 @@
       "js": "underscore*.js"
     },
     "backbone.marionette": {
-      "js": "lib/core/amd/backbone.marionette*.js"
+      "js": "lib/core/backbone.marionette*.js"
     },
     "backbone.wreqr": {
-      "js": "lib/amd/backbone.wreqr*.js"
+      "js": "lib/backbone.wreqr*.js"
     },
     "backbone.babysitter": {
-      "js": "lib/amd/backbone.babysitter*.js"
+      "js": "lib/backbone.babysitter*.js"
     },
     "backbone-paginator": {
       "js": "lib/backbone-paginator*.js"
@@ -72,8 +74,8 @@
       "css": "backgrid-paginator.css"
     },
     "backbone-forms": {
-      "js": "distribution.amd/**/*.js",
-      "css": "distribution.amd/templates/bootstrap.css"
+      "js": "distribution/**/*.js",
+      "css": "distribution/templates/bootstrap.css"
     },
     "backbone.bootstrap-modal": {
       "js": "src/backbone.bootstrap-modal.js"
@@ -86,7 +88,7 @@
       "css": "toggles.css"
     },
     "moment": {
-      "js": "min/moment-with-langs.*.js"
+      "js": "min/moment-with-locales.*.js"
     },
     "require-handlebars-plugin": {
       "js": [
@@ -120,6 +122,10 @@
     },
     "jquery-timeago": {
       "js": "jquery.timeago.js"
+    },
+    "backgrid-filter": {
+      "js": "backgrid-filter.js",
+      "css": "backgrid-filter.min.css"
     }
   }
 }

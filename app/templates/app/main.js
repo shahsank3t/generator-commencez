@@ -8,7 +8,7 @@ require.config({
    * as part of a config block.
    * @type {Array} An array of dependencies to load.
    */
-  deps: ['backbone.marionette', 'bootstrap', 'globalize', 'fs/utils/FSLangSupport'],
+  deps: ['backbone.marionette', 'globalize', 'fs/utils/FSLangSupport'],
 
   /**
    * The number of seconds to wait before giving up on loading a script.
@@ -35,6 +35,9 @@ require.config({
     },
     'backgrid-paginator': {
       deps: ['backbone', 'backgrid']
+    },
+    'backgrid-filter': {
+      deps: ['backbone', 'backgrid', ]
     },
     'backbone-forms.templates': {
       deps: ['backbone-forms.list', 'backbone-forms']
@@ -77,23 +80,29 @@ require.config({
     'backbone.marionette': '../libs/bower/backbone.marionette/js/backbone.marionette',
     'backbone.wreqr': '../libs/bower/backbone.wreqr/js/backbone.wreqr',
     'backbone.babysitter': '../libs/bower/backbone.babysitter/js/backbone.babysitter',
+    'backbone-forms': '../libs/bower/backbone-forms/js/backbone-forms',
     'backbone-forms.list': '../libs/bower/backbone-forms/js/list',
     'backbone-forms.templates': '../libs/bower/backbone-forms/js/bootstrap',
     'Backbone.BootstrapModal': '../libs/bower/backbone.bootstrap-modal/js/backbone.bootstrap-modal',
-    'backgrid': '../libs/other/backgrid/backgrid',
+    'backbone.paginator': '../libs/bower/backbone.paginator/js/backbone.paginator',
+    'backgrid': '../libs/bower/backgrid/js/backgrid',
     'backgrid-paginator': '../libs/bower/backgrid-paginator/js/backgrid-paginator',
+    'backgrid-filter': '../libs/bower/backgrid-filter/js/backgrid-filter',    
     'bootstrap-editable': '../libs/bower/x-editable/js/bootstrap-editable',
     'jquery-toggles': '../libs/bower/jquery-toggles/js/toggles.min',
     'tag-it': '../libs/bower/tag-it/js/tag-it',
-    'jquery-ui': '../libs/other/jquery-ui/js/jquery-ui-1.10.3.custom',
+    'jquery-ui': '../libs/bower/jquery-ui/js/jquery-ui-1.10.3.custom',
     'jquery-timeago': '../libs/bower/jquery-timeago/js/jquery.timeago',
-    'globalize': '../libs/bower/globalize/lib/globalize',
+    'globalize': '../libs/bower/globalize/js/globalize',
+    'gblMessages' : '../../scripts/globalize',
     'pnotify': '../libs/bower/pines-notify/js/jquery.pnotify.min',
     'moment': '../libs/bower/moment/js/moment-with-langs.min',
-    'handlebars': '../libs/bower/require-handlebars-plugin/js/Handlebars',
+    'handlebars': '../libs/bower/handlebars/js/handlebars',
     'i18nprecompile': '../libs/bower/require-handlebars-plugin/js/i18nprecompile',
     'json2': '../libs/bower/require-handlebars-plugin/js/json2',
     'hbs': '../libs/bower/require-handlebars-plugin/js/hbs',
+    'requirejs.text': '../libs/bower/requirejs-text/js/text',
+    'bootbox': '../libs/bower/bootbox/js/bootbox',
     'tmpl': '../templates'
   },
 
@@ -103,7 +112,7 @@ require.config({
     disableHelpers: false, // When true, won't look for and try to automatically load
     // helpers (false by default)
     helperPathCallback: // Callback to determine the path to look for helpers
-      function (name) { // ('/template/helpers/'+name by default)
+      function(name) { // ('/template/helpers/'+name by default)
         return "helpers/FSHelpers";
       },
     templateExtension: "html", // Set the extension automatically appended to templates
@@ -130,7 +139,7 @@ require.config({
  * 2. requireModules: an array of module
  * names/URLs that timed out.
  */
-require.onError = function (err) {
+require.onError = function(err) {
   console.log('modules: ', err.requireModules, ', error: ' + err.requireType);
   if (err.requireType === 'timeout') {
     console.log('timeout modules: ', err.requireModules);
@@ -138,6 +147,6 @@ require.onError = function (err) {
   }
 };
 
-require(["App"], function (App) {
+require(["App"], function(App) {
   App.initialize();
 });

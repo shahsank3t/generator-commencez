@@ -56,6 +56,6 @@ To install dev-dependencies:
 	
 	$ npm install
 
-To start the app run:
+To copy bower components in libs directory:
 
-    $ grunt
+    $ grunt bowercopy

@@ -92,7 +92,8 @@ Generator.prototype.setupEnv = function setupEnv() {
   // create dir
   this.mkdir(_rootDir + 'scripts');
   this.mkdir(_rootDir + 'scripts/router');
-  this.mkdir(_rootDir + 'scripts/helpers');
+  this.mkdir(_rootDir + 'scripts/globalize');
+  this.mkdir(_rootDir + 'scripts/globalize/message');
   this.mkdir(_rootDir + 'styles');
   this.mkdir(_rootDir + 'images');
   this.mkdir(_rootDir + 'libs');
@@ -131,5 +132,7 @@ Generator.prototype.setupEnv = function setupEnv() {
 
   this.copy('scripts/modules/Vent.js', _mainJsDir + 'modules/Vent.js');
   this.copy('scripts/modules/FSAcl.js', _mainJsDir + 'modules/FSAcl.js');
+
+  this.copy('scripts/en.js', _rootDir + 'scripts/globalize/message/en.js');
   
 };
