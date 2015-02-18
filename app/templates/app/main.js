@@ -8,7 +8,7 @@ require.config({
    * as part of a config block.
    * @type {Array} An array of dependencies to load.
    */
-  deps: ['backbone.marionette', 'globalize', 'fs/utils/FSLangSupport'],
+  deps: ['backbone.marionette', 'globalize', 'utils/LangSupport'],
 
   /**
    * The number of seconds to wait before giving up on loading a script.
@@ -108,7 +108,7 @@ require.config({
     // helpers (false by default)
     helperPathCallback: // Callback to determine the path to look for helpers
       function(name) { // ('/template/helpers/'+name by default)
-        return "helpers/FSHelpers";
+        return "helpers/Helpers";
       },
     templateExtension: "html", // Set the extension automatically appended to templates
     // ('hbs' by default)

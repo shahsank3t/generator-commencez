@@ -1,11 +1,11 @@
-define(['require', 'fs/utils/FSUtils'], function (require, FSUtils) {
+define(['require', 'utils/Utils'], function (require, Utils) {
   'use strict';
 
-var FSBaseModel = Backbone.Model.extend(
-	/** @lends FSBaseModel.prototype */
+var BaseModel = Backbone.Model.extend(
+	/** @lends BaseModel.prototype */
 	{
 		/**
-		 * FSBaseModel's initialize function
+		 * BaseModel's initialize function
 		 * @augments Backbone.Model
 		 * @constructs
 		 */
@@ -13,7 +13,7 @@ var FSBaseModel = Backbone.Model.extend(
 			
 		},
 		bindErrorEvents :function(){
-			this.bind("error", FSUtils.defaultErrorHandler);
+			this.bind("error", Utils.defaultErrorHandler);
 		},
 		/**
 		 * toString for a model. Every model should implement this function.
@@ -47,5 +47,5 @@ var FSBaseModel = Backbone.Model.extend(
 		}
 	});
 
-	return FSBaseModel;
+	return BaseModel;
 });

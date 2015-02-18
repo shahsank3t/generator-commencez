@@ -3,8 +3,8 @@
  *
  */
 define(['require',
-  'fs/rest/SessionREST',
-  'fs/models/VAppState'
+  'rest/SessionREST',
+  'models/VAppState'
 ], function(require, SessionREST, VAppState) {
   'use strict';
 

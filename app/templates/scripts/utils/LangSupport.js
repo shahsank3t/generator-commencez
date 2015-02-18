@@ -1,4 +1,4 @@
-define(['require', 'fs/modules/Vent', 'globalize', 'gblMessages/message/en'], function (require, vent, Globalize) {
+define(['require', 'modules/Vent', 'globalize', 'gblMessages/message/en'], function (require, vent, Globalize) {
   'use strict';
 
   var localization = {};
@@ -76,8 +76,8 @@ define(['require', 'fs/modules/Vent', 'globalize', 'gblMessages/message/en'], fu
 
   localization.formatDate = function (val, format) {
     if (!val) return "";
-    require(['fs/utils/FSUtils'], function (FSUtils) {
-      var valDate = FSUtil.DBToDateObj(val);
+    require(['utils/Utils'], function (Utils) {
+      var valDate = Util.DBToDateObj(val);
       return Globalize.format(valDate, format, localization.culture);
     });
   };

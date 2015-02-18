@@ -1,11 +1,11 @@
-define(['require', 'fs/utils/FSGlobals', 'fs/utils/FSUtils', 'backbone.paginator'], function (require, FSGlobals, FSUtils) {
+define(['require', 'utils/Globals', 'utils/Utils', 'backbone.paginator'], function (require, Globals, Utils) {
   'use strict';
 
-  var FSBaseCollection = Backbone.PageableCollection.extend(
-    /** @lends FSBaseCollection.prototype */
+  var BaseCollection = Backbone.PageableCollection.extend(
+    /** @lends BaseCollection.prototype */
     {
       /**
-       * FSBaseCollection's initialize function
+       * BaseCollection's initialize function
        * @augments Backbone.PageableCollection
        * @constructs
        */
@@ -14,14 +14,14 @@ define(['require', 'fs/utils/FSGlobals', 'fs/utils/FSUtils', 'backbone.paginator
 
       },
       bindErrorEvents: function () {
-        this.bind("error", FSUtils.defaultErrorHandler);
+        this.bind("error", Utils.defaultErrorHandler);
       },
       /**
        * state required for the PageableCollection
        */
       state: {
         firstPage: 0,
-        pageSize: FSGlobals.settings.PAGE_SIZE
+        pageSize: Globals.settings.PAGE_SIZE
       },
 
       mode: 'server',
@@ -167,5 +167,5 @@ define(['require', 'fs/utils/FSGlobals', 'fs/utils/FSUtils', 'backbone.paginator
 
     });
 
-  return FSBaseCollection;
+  return BaseCollection;
 });

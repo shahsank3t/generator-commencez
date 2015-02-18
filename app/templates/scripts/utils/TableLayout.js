@@ -4,19 +4,19 @@
 
 define([
   'require',
-  'fs/utils/FSLangSupport',
-  'hbs!tmpl/common/FSTableLayout_tmpl',
+  'utils/LangSupport',
+  'hbs!tmpl/common/TableLayout_tmpl',
   'backgrid-filter',
   'backgrid-paginator'
-], function (require, Localize, FSTablelayoutTmpl) {
+], function (require, Localize, TablelayoutTmpl) {
   'use strict';
 
-  var FSTableLayout = Backbone.Marionette.Layout.extend(
-    /** @lends FSTableLayout */
+  var TableLayout = Backbone.Marionette.Layout.extend(
+    /** @lends TableLayout */
     {
-      _viewName: 'FSTableLayout',
+      _viewName: 'TableLayout',
 
-      template: FSTablelayoutTmpl,
+      template: TablelayoutTmpl,
 
       /** Layout sub regions */
       regions: {
@@ -102,7 +102,7 @@ define([
       },
 
       /**
-       * intialize a new HDFSTableLayout Layout
+       * intialize a new HDTableLayout Layout
        * @constructs
        */
       initialize: function (options) {
@@ -304,5 +304,5 @@ define([
       }
     });
 
-  return FSTableLayout;
+  return TableLayout;
 });

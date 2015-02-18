@@ -2,10 +2,10 @@
  * The singleton class for App State model to be used globally
  */
 
-define(['require', 'fs/models/FSBaseModel'], function (require, FSBaseModel) {
+define(['require', 'models/BaseModel'], function (require, BaseModel) {
   'use strict';
 
-  var VAppState = FSBaseModel.extend({
+  var VAppState = BaseModel.extend({
     defaults: {
 
     },

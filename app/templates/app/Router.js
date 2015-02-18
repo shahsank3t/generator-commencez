@@ -18,7 +18,7 @@ define([
 		},
 
 		showRegions: function() {
-			// require(['scripts/fs/views/Header','scripts/fs/views/Footer'],function(HeaderView,FooterView){
+			// require(['scripts/views/Header','scripts/views/Footer'],function(HeaderView,FooterView){
 			// 	new HeaderView().render();
 			// 	new FooterView().render();
 			// });
@@ -50,7 +50,7 @@ define([
 		 * Define route handlers here
 		 */
 		dashboardAction: function() {
-			// require(['scripts/fs/views/dashboard/DashboardView.js'],function(DashboardView){
+			// require(['scripts/views/dashboard/DashboardView.js'],function(DashboardView){
 			// 	var dashboardView = new DashboardView();
 			// 	dashboardView.render();
 			// });

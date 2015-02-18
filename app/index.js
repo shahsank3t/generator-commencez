@@ -101,9 +101,8 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.mkdir(_rootDir + 'META-INF');
   this.mkdir(_rootDir + 'WEB-INF');
 
-  var _mainJsDir = 'WebContent/scripts/fs/';
+  var _mainJsDir = 'WebContent/scripts/';
 
-  this.mkdir(_mainJsDir);
   this.mkdir(_mainJsDir + 'models');
   this.mkdir(_mainJsDir + 'collection');
   this.mkdir(_mainJsDir + 'views');
@@ -119,19 +118,19 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.copy('app/robots.txt', _rootDir + 'robots.txt');
   this.copy('app/htaccess', _rootDir + '.htaccess');
 
-  this.copy('scripts/collection/FSBaseCollection.js', _mainJsDir + 'collection/FSBaseCollection.js');
+  this.copy('scripts/collection/BaseCollection.js', _mainJsDir + 'collection/BaseCollection.js');
   
-  this.copy('scripts/models/FSBaseModel.js', _mainJsDir + 'models/FSBaseModel.js');
+  this.copy('scripts/models/BaseModel.js', _mainJsDir + 'models/BaseModel.js');
   
-  this.copy('scripts/utils/FSGlobals.js', _mainJsDir + 'utils/FSGlobals.js');
-  this.copy('scripts/utils/FSLangSupport.js', _mainJsDir + 'utils/FSLangSupport.js');
-  this.copy('scripts/utils/FSOverrides.js', _mainJsDir + 'utils/FSOverrides.js');
-  this.copy('scripts/utils/FSUtils.js', _mainJsDir + 'utils/FSUtils.js');
-  this.copy('scripts/utils/FSTableLayout.js', _mainJsDir + 'utils/FSTableLayout.js');
-  this.copy('scripts/helpers/FSHelpers.js', _mainJsDir + 'utils/FSHelpers.js');
+  this.copy('scripts/utils/Globals.js', _mainJsDir + 'utils/Globals.js');
+  this.copy('scripts/utils/LangSupport.js', _mainJsDir + 'utils/LangSupport.js');
+  this.copy('scripts/utils/Overrides.js', _mainJsDir + 'utils/Overrides.js');
+  this.copy('scripts/utils/Utils.js', _mainJsDir + 'utils/Utils.js');
+  this.copy('scripts/utils/TableLayout.js', _mainJsDir + 'utils/TableLayout.js');
+  this.copy('scripts/helpers/Helpers.js', _mainJsDir + 'utils/Helpers.js');
 
   this.copy('scripts/modules/Vent.js', _mainJsDir + 'modules/Vent.js');
-  this.copy('scripts/modules/FSAcl.js', _mainJsDir + 'modules/FSAcl.js');
+  this.copy('scripts/modules/Acl.js', _mainJsDir + 'modules/Acl.js');
 
   this.copy('scripts/en.js', _rootDir + 'scripts/globalize/message/en.js');
   

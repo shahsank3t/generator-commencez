@@ -15,9 +15,6 @@ Stack
     * Handlebars: 
         - http://handlebarsjs.com/
         - https://github.com/SlexAxton/require-handlebars-plugin
-    * SASS-Bootstrap:
-        - http://twitter.github.io/bootstrap
-        - https://github.com/thomas-mcdonald/bootstrap-sass
 - Tooling: 
     * Yeoman: http://yeoman.io/
     * Bower: http://bower.io/

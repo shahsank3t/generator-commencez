@@ -1,9 +1,9 @@
 define(['require', 
   'handlebars', 
-  'fs/utils/FSUtils', 
-  'fs/utils/FSLangSupport',
-  'fs/modules/FSAcl'
-  ], function(require, Handlebars, FSUtils, localization, FSAcl) {
+  'utils/Utils', 
+  'utils/LangSupport',
+  'modules/Acl'
+  ], function(require, Handlebars, Utils, localization, Acl) {
   require('moment');
   /*
    * General guidelines while writing helpers:
@@ -34,28 +34,28 @@ define(['require',
 
   Handlebars.registerHelper("canRead", function(resource, options) {
     var roles = _.has(options.hash, 'roles') ? options.hash.roles : undefined;
-    if (FSAcl.canRead(resource, roles)) {
+    if (Acl.canRead(resource, roles)) {
       return options.fn(this);
     }
   });
 
   Handlebars.registerHelper("canCreate", function(resource, options) {
     var roles = _.has(options.hash, 'roles') ? options.hash.roles : undefined;
-    if (FSAcl.canCreate(resource, roles)) {
+    if (Acl.canCreate(resource, roles)) {
       return options.fn(this);
     }
   });
 
   Handlebars.registerHelper("canUpdate", function(resource, options) {
     var roles = _.has(options.hash, 'roles') ? options.hash.roles : undefined;
-    if (FSAcl.canUpdate(resource, roles)) {
+    if (Acl.canUpdate(resource, roles)) {
       return options.fn(this);
     }
   });
 
   Handlebars.registerHelper("canDelete", function(resource, options) {
     var roles = _.has(options.hash, 'roles') ? options.hash.roles : undefined;
-    if (FSAcl.canDelete(resource, roles)) {
+    if (Acl.canDelete(resource, roles)) {
       return options.fn(this);
     }
   });
@@ -75,11 +75,11 @@ define(['require',
    * escapeHtmlChar
    */
   Handlebars.registerHelper("escapeHtmlChar", function(str) {
-    return FSUtils.escapeHtmlChar(str);
+    return Utils.escapeHtmlChar(str);
   });
 
   Handlebars.registerHelper("nl2brAndEscapeHtmlChar", function(str) {
-    return FSUtils.nl2brAndEscapeHtmlChar(str);
+    return Utils.nl2brAndEscapeHtmlChar(str);
   });
 
   /*
@@ -87,30 +87,30 @@ define(['require',
    */
   Handlebars.registerHelper('convertEnumValueToLabel', function(enumName,
     enumValue) {
-    return FSUtils.enumValueToLabel(
-      FSUtils.getEnum(enumName), enumValue);
+    return Utils.enumValueToLabel(
+      Utils.getEnum(enumName), enumValue);
   });
 
   /*
    * required to format date time
    */
   Handlebars.registerHelper('convertFormatDateTime', function(cellValue) {
-    return FSUtils.formatDateTime(cellValue);
+    return Utils.formatDateTime(cellValue);
   });
   Handlebars.registerHelper('formatDate', function(val) {
     if (!val) return "";
-    return FSUtils.formatDate(val);
+    return Utils.formatDate(val);
   });
   Handlebars.registerHelper('formatDateCustom', function(val, format) {
     if (!val) return "";
-    var dateObj = FSUtils.DBToDateObj(val);
+    var dateObj = Utils.DBToDateObj(val);
     return Globalize.format(dateObj, format);
     //return Globalize.format((_.isString(val)?new Date(val):val),format);
   });
 
   Handlebars.registerHelper('toHumanDate', function(val) {
     if (!val) return "";
-    //return FSUtils.toHumanDate(val);
+    //return Utils.toHumanDate(val);
     return localization.formatDate(val, 'f');
   });
 

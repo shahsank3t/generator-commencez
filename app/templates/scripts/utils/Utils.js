@@ -1,9 +1,9 @@
 define(['require'], function(require) {
   'use strict';
 
-  var FSUtil = {};
+  var Util = {};
 
-  FSUtil.DBToDateObj = function(dbDate) {
+  Util.DBToDateObj = function(dbDate) {
 
     var dateObj = new Date(dbDate.toString());
     // If the above fails for some browser, try our own parse function
@@ -14,7 +14,7 @@ define(['require'], function(require) {
     return dateObj;
   };
 
-  FSUtil.manualDateParse = function(date) {
+  Util.manualDateParse = function(date) {
     var origParse = Date.parse,
       numericKeys = [1, 4, 5, 6, 7, 10, 11];
     var timestamp, struct, minutesOffset = 0;
@@ -49,5 +49,5 @@ define(['require'], function(require) {
     return timestamp;
   };
 
-  return FSUtil;
+  return Util;
 });
