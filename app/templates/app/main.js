@@ -63,10 +63,6 @@ require.config({
     globalize: {
       exports: 'Globalize'
     },
-    pnotify: {
-      deps: ['jquery'],
-      exports: 'pnotify'
-    },
     moment: {
       deps: ['jquery'],
       exports: 'moment'
@@ -95,7 +91,6 @@ require.config({
     'jquery-timeago': '../libs/bower/jquery-timeago/js/jquery.timeago',
     'globalize': '../libs/bower/globalize/js/globalize',
     'gblMessages' : '../../scripts/globalize',
-    'pnotify': '../libs/bower/pines-notify/js/jquery.pnotify.min',
     'moment': '../libs/bower/moment/js/moment-with-langs.min',
     'handlebars': '../libs/bower/handlebars/js/handlebars',
     'i18nprecompile': '../libs/bower/require-handlebars-plugin/js/i18nprecompile',
@@ -126,7 +121,7 @@ require.config({
    * To get timely, correct error triggers in IE, force a define/shim export.
    * @type {Boolean}
    */
-  enforceDefine: true
+  enforceDefine: false
 });
 
 /**
