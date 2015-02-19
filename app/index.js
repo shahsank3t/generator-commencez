@@ -8,8 +8,6 @@ module.exports = Generator;
 function Generator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
-  this.templateFramework = 'handlebars';
-
   this.on('end', function () {
     if (['app', 'backbone', 'marionette'].indexOf(this.generatorName) >= 0) {
       this.installDependencies({
@@ -37,7 +35,7 @@ Generator.prototype.askFor = function askFor() {
     '\n ´   ' + chalk.red('`  |') + '° ' + chalk.red('´ Y') + ' `\n';
 
   console.log(welcome);
-  console.log('Out of the box I include HTML5 Boilerplate, jQuery, Backbone.js, Marionette, Handlebars and Require.');
+  console.log('Out of the box I include HTML5 Boilerplate, jQuery, Backbone.js, Marionette, Underscore and Require.');
 
 
   this.isFullApp = true;
@@ -106,6 +104,7 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.mkdir(_mainJsDir + 'models');
   this.mkdir(_mainJsDir + 'collection');
   this.mkdir(_mainJsDir + 'views');
+  this.mkdir(_mainJsDir + 'views/site');
   this.mkdir(_mainJsDir + 'utils');
   this.mkdir(_mainJsDir + 'modules');
   this.mkdir(_mainJsDir + 'rest');
@@ -127,10 +126,13 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.copy('scripts/utils/Overrides.js', _mainJsDir + 'utils/Overrides.js');
   this.copy('scripts/utils/Utils.js', _mainJsDir + 'utils/Utils.js');
   this.copy('scripts/utils/TableLayout.js', _mainJsDir + 'utils/TableLayout.js');
-  this.copy('scripts/helpers/Helpers.js', _mainJsDir + 'utils/Helpers.js');
 
   this.copy('scripts/modules/Vent.js', _mainJsDir + 'modules/Vent.js');
   this.copy('scripts/modules/Acl.js', _mainJsDir + 'modules/Acl.js');
+
+  this.copy('scripts/views/Dashboard.js', _mainJsDir + 'views/site/Dashboard.js');
+  this.copy('scripts/views/Header.js', _mainJsDir + 'views/site/Header.js');
+  this.copy('scripts/views/Footer.js', _mainJsDir + 'views/site/Footer.js');
 
   this.copy('scripts/en.js', _rootDir + 'scripts/globalize/message/en.js');
   

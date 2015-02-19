@@ -12,9 +12,7 @@ Stack
     * Marionette: https://github.com/marionettejs/backbone.marionette
     * jQuery: http://jquery.com/
     * Require: http://requirejs.org/
-    * Handlebars: 
-        - http://handlebarsjs.com/
-        - https://github.com/SlexAxton/require-handlebars-plugin
+    * Underscore: http://underscorejs.org
 - Tooling: 
     * Yeoman: http://yeoman.io/
     * Bower: http://bower.io/

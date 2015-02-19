@@ -18,10 +18,10 @@ define([
 		},
 
 		showRegions: function() {
-			// require(['scripts/views/Header','scripts/views/Footer'],function(HeaderView,FooterView){
-			// 	new HeaderView().render();
-			// 	new FooterView().render();
-			// });
+			require(['views/site/Header','views/site/Footer'],function(HeaderView,FooterView){
+				App.rHeader.show(new HeaderView());
+				App.rFooter.show(new FooterView());
+			});
 		},
 
 		/**
@@ -50,10 +50,9 @@ define([
 		 * Define route handlers here
 		 */
 		dashboardAction: function() {
-			// require(['scripts/views/dashboard/DashboardView.js'],function(DashboardView){
-			// 	var dashboardView = new DashboardView();
-			// 	dashboardView.render();
-			// });
+			require(['views/site/Dashboard'],function(DashboardView){
+				App.rContent.show(new DashboardView());
+			});
 		},
 		defaultAction: function(actions) {
 			// We have no matching route, lets just log what the URL was

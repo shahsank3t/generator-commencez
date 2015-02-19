@@ -24,9 +24,7 @@
     "jquery-toggles": "3.1.3",
     "tag-it": "*",
     "jquery-timeago": "1.4.1",
-    "moment": "2.9.0",
-    "require-handlebars-plugin": "0.11.2",
-    "handlebars": "3.0.0"
+    "moment": "2.9.0"
   },
   "devDependencies": {},
   "directory": "<%= bowerDirectory %>",
@@ -88,14 +86,6 @@
     },
     "moment": {
       "js": "min/moment-with-locales.*.js"
-    },
-    "require-handlebars-plugin": {
-      "js": [
-        "Handlebars.js",
-        "hbs.js",
-        "hbs/i18nprecompile.js",
-        "hbs/json2.js"
-      ]
     },
     "bootbox": {
       "js": "bootbox.js"

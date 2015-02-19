@@ -5,11 +5,32 @@
 define([
   'require',
   'utils/LangSupport',
-  'hbs!tmpl/common/TableLayout_tmpl',
   'backgrid-filter',
   'backgrid-paginator'
-], function (require, Localize, TablelayoutTmpl) {
+], function (require, Localize) {
   'use strict';
+
+
+  var TablelayoutTmpl = '<div class="clearfix">'+
+                          '<div class="form-group pull-right no-margin">'+
+                            '<label class="select">'+
+                              '<select data-id="pageSize" class="form-control">'+
+                                '<option selected>10</option>'+
+                                '<option>25</option>'+
+                                '<option>50</option>'+
+                                '<option>100</option>'+
+                              '</select>'+
+                            '</label>'+
+                          '</div>'+
+                        '</div>'+
+                        '<div class="position-relative thick-border">'+
+                          '<div data-id="r_tableList" class="table-responsive tableBorder"> </div>'+
+                          '<div data-id="r_tableSpinner"></div>'+
+                        '</div>'+
+                        '<div class="row">'+
+                          '<div data-id="r_footerRecords" class="col-sm-6 margin-top-10"></div>'+
+                          '<div data-id="r_pagination" class="col-sm-6 text-right"></div>'+
+                        '</div>';
 
   var TableLayout = Backbone.Marionette.Layout.extend(
     /** @lends TableLayout */

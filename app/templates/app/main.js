@@ -30,6 +30,9 @@ require.config({
     underscore: {
       exports: '_'
     },
+    marionette: {
+      deps: ['backbone']
+    },
     backgrid: {
       deps: ['backbone']
     },
@@ -73,7 +76,7 @@ require.config({
     'jquery': '../libs/bower/jquery/js/jquery',
     'backbone': '../libs/bower/backbone/js/backbone',
     'underscore': '../libs/bower/underscore/js/underscore',
-    'backbone.marionette': '../libs/bower/backbone.marionette/js/backbone.marionette',
+    'marionette': '../libs/bower/backbone.marionette/js/backbone.marionette',
     'backbone.wreqr': '../libs/bower/backbone.wreqr/js/backbone.wreqr',
     'backbone.babysitter': '../libs/bower/backbone.babysitter/js/backbone.babysitter',
     'backbone-forms': '../libs/bower/backbone-forms/js/backbone-forms',
@@ -90,29 +93,11 @@ require.config({
     'jquery-ui': '../libs/bower/jquery-ui/js/jquery-ui-1.10.3.custom',
     'jquery-timeago': '../libs/bower/jquery-timeago/js/jquery.timeago',
     'globalize': '../libs/bower/globalize/js/globalize',
-    'gblMessages' : '../../scripts/globalize',
+    'gblMessages' : '../scripts/globalize',
     'moment': '../libs/bower/moment/js/moment-with-langs.min',
-    'handlebars': '../libs/bower/handlebars/js/handlebars',
-    'i18nprecompile': '../libs/bower/require-handlebars-plugin/js/i18nprecompile',
-    'json2': '../libs/bower/require-handlebars-plugin/js/json2',
-    'hbs': '../libs/bower/require-handlebars-plugin/js/hbs',
     'requirejs.text': '../libs/bower/requirejs-text/js/text',
     'bootbox': '../libs/bower/bootbox/js/bootbox',
     'tmpl': '../templates'
-  },
-
-  hbs: {
-    disableI18n: true, // This disables the i18n helper and doesn't require the json i18n files (e.g. en_us.json)
-    // (false by default)
-    disableHelpers: false, // When true, won't look for and try to automatically load
-    // helpers (false by default)
-    helperPathCallback: // Callback to determine the path to look for helpers
-      function(name) { // ('/template/helpers/'+name by default)
-        return "helpers/Helpers";
-      },
-    templateExtension: "html", // Set the extension automatically appended to templates
-    // ('hbs' by default)
-    compileOptions: {} // options object which is passed to Handlebars compiler
   },
 
   /**
@@ -135,7 +120,7 @@ require.config({
  * names/URLs that timed out.
  */
 require.onError = function(err) {
-  console.log('modules: ', err.requireModules, ', error: ' + err.requireType);
+  console.log('modules: ', err.requireModules, ', error: ' + err.requireType, ', message: ' + err.message);
   if (err.requireType === 'timeout') {
     console.log('timeout modules: ', err.requireModules);
     throw err;
@@ -143,5 +128,6 @@ require.onError = function(err) {
 };
 
 require(["App"], function(App) {
+  window.App = App;
   App.initialize();
 });
