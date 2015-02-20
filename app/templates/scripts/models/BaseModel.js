@@ -30,7 +30,9 @@ var BaseModel = Backbone.Model.extend(
 				silent: true
 			});
 		}
-	},{
+	},
+	/** BaseModel's Static Attributes */
+	{
 
 		/**
 		 * [nonCrudOperation description]

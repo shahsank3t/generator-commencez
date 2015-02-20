@@ -1,4 +1,8 @@
-define(['require', 'utils/Globals', 'utils/Utils', 'backbone.paginator'], function (require, Globals, Utils) {
+define(['require',
+  'utils/Globals',
+  'utils/Utils',
+  'backbone.paginator'
+  ], function (require, Globals, Utils) {
   'use strict';
 
   var BaseCollection = Backbone.PageableCollection.extend(
@@ -141,7 +145,9 @@ define(['require', 'utils/Globals', 'utils/Utils', 'backbone.paginator'], functi
 
 
 
-    }, {
+    }, 
+    /** BaseCollection's Static Attributes */
+    {
       // Static functions
       getTableCols: function (cols, collection) {
         var retCols = _.map(cols, function (v, k, l) {

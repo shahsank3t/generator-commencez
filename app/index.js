@@ -107,7 +107,6 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.mkdir(_mainJsDir + 'views/site');
   this.mkdir(_mainJsDir + 'utils');
   this.mkdir(_mainJsDir + 'modules');
-  this.mkdir(_mainJsDir + 'rest');
 
   this.copy('app/main.js', _rootDir + 'scripts/main.js');
   this.copy('app/App.js', _rootDir + 'scripts/App.js');
@@ -118,8 +117,10 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.copy('app/htaccess', _rootDir + '.htaccess');
 
   this.copy('scripts/collection/BaseCollection.js', _mainJsDir + 'collection/BaseCollection.js');
+  this.copy('scripts/collection/VModelList.js', _mainJsDir + 'collection/VModelList.js');
   
   this.copy('scripts/models/BaseModel.js', _mainJsDir + 'models/BaseModel.js');
+  this.copy('scripts/models/VModel.js', _mainJsDir + 'models/VModel.js');
   
   this.copy('scripts/utils/Globals.js', _mainJsDir + 'utils/Globals.js');
   this.copy('scripts/utils/LangSupport.js', _mainJsDir + 'utils/LangSupport.js');

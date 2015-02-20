@@ -8,7 +8,7 @@ require.config({
    * as part of a config block.
    * @type {Array} An array of dependencies to load.
    */
-  deps: ['backbone.marionette', 'globalize', 'utils/LangSupport'],
+  deps: ['marionette', 'globalize', 'utils/LangSupport'],
 
   /**
    * The number of seconds to wait before giving up on loading a script.

@@ -1,9 +1,9 @@
 define(['require'], function(require) {
   'use strict';
 
-  var Util = {};
+  var Utils = {};
 
-  Util.DBToDateObj = function(dbDate) {
+  Utils.DBToDateObj = function(dbDate) {
 
     var dateObj = new Date(dbDate.toString());
     // If the above fails for some browser, try our own parse function
@@ -14,7 +14,7 @@ define(['require'], function(require) {
     return dateObj;
   };
 
-  Util.manualDateParse = function(date) {
+  Utils.manualDateParse = function(date) {
     var origParse = Date.parse,
       numericKeys = [1, 4, 5, 6, 7, 10, 11];
     var timestamp, struct, minutesOffset = 0;
@@ -49,5 +49,12 @@ define(['require'], function(require) {
     return timestamp;
   };
 
-  return Util;
+  Utils.defaultErrorHandler = function(model, error) {
+    if (error.status == 401) {
+      throw new Error("ERROR 401 occured.\n You might want to change this error from here.");
+      // window.location.href = "login.jsp" + location.hash;
+    }
+  };
+
+  return Utils;
 });

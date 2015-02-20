@@ -1,15 +1,23 @@
-define(['require'], function(require){
+define(['require', 'models/VModel'], function(require, VModel){
   'use strict';
-  var tmpl = '<center> Dashboard Here !!! </center>';
+  var tmpl = '<div><center><h1>Dashboard Template !!!</h1></center></div>';
   var vDashboard = Marionette.LayoutView.extend({
+
     template: tmpl,
+
     templateHelpers: function() {},
+
     regions: {},
+
     events: {},
-    initialize: function(options) {
+
+    ui: {},
+
+    initialize: function (options) {
       console.log('Initialized vDashboard');
     },
-    onRender: function(){}
+
+    onRender: function () {},
   });
   return vDashboard;
 });
