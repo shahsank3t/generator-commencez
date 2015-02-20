@@ -1,4 +1,4 @@
-define(['scripts/router/Router.js','marionette'], function(Router, Marionette) {
+define(['marionette'], function(Marionette) {
   var App = new Marionette.Application();
 
   App.addRegions({
@@ -8,8 +8,7 @@ define(['scripts/router/Router.js','marionette'], function(Router, Marionette) {
   });
 
   App.addInitializer(function() {
-    // Pass in our Router module and call it's initialize function
-    Router.initialize();
+    Backbone.history.start();
   });
 
   return App;

@@ -127,7 +127,7 @@ require.onError = function(err) {
   }
 };
 
-require(["App"], function(App) {
-  window.App = App;
-  App.initialize();
+require(["App", "router/Router"], function(App, Router) {
+  App.appRouter = new Router();
+  App.start();
 });
