@@ -5,8 +5,6 @@ Yeoman generator for initial setup of web application's UI framework using backb
 
 Stack
 -------
-- Server: 
-    * Node: http://nodejs.org/
 - Client: 
     * Backbone: http://backbonejs.org/
     * Marionette: https://github.com/marionettejs/backbone.marionette
