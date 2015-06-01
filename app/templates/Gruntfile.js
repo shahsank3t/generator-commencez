@@ -39,6 +39,7 @@ module.exports = function(grunt) {
           'backbone-forms/js/list.js': 'backbone-forms/distribution/editors/list.js',
           'backbone.bootstrap-modal/js/backbone.bootstrap-modal.js': 'backbone.bootstrap-modal/src/backbone.bootstrap-modal.js',
           'backgrid/js/backgrid.js': 'backgrid/lib/backgrid.js',
+          'backgrid/css/backgrid.min.css': 'backgrid/lib/backgrid.min.css',
           'backgrid-paginator/js/backgrid-paginator.js': 'backgrid-paginator/backgrid-paginator.js',
           'backgrid-paginator/css/backgrid-paginator.css': 'backgrid-paginator/backgrid-paginator.css',
           'x-editable/js/bootstrap-editable.js': 'x-editable/dist/bootstrap-editable/js/bootstrap-editable.js',
@@ -47,6 +48,7 @@ module.exports = function(grunt) {
           'jquery-toggles/js/toggles.min.js': 'jquery-toggles/toggles.min.js',
           'tag-it/js/tag-it.js': 'tag-it/js/tag-it.js',
           'jquery-ui/js/jquery-ui-1.10.3.custom.js': 'jquery-ui/ui/minified/jquery-ui.min.js',
+          'jquery-ui/css/jquery-ui.min.css': 'jquery-ui/themes/ui-lightness/jquery-ui.min.css',
           'jquery-timeago/js/jquery.timeago.js': 'jquery-timeago/jquery.timeago.js',
           'globalize/js/globalize.js': 'globalize/lib/globalize.js',
           'moment/js/moment-with-langs.min.js': 'moment/min/moment-with-locales.min.js',
@@ -57,7 +59,19 @@ module.exports = function(grunt) {
           'backgrid-filter/css/backgrid-filter.min.css': 'backgrid-filter/backgrid-filter.min.css',
           'bootstrap/js/bootstrap.js': 'bootstrap/dist/js/bootstrap.js',
           'bootstrap/css/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css',
-          'bootstrap/font/glyphicons-halflings-regular.ttf': 'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf'
+          'bootstrap/fonts/glyphicons-halflings-regular.ttf': 'bootstrap/dist/fonts/glyphicons-halflings-regular.ttf',
+          'bootstrap/fonts/glyphicons-halflings-regular.eot': 'bootstrap/dist/fonts/glyphicons-halflings-regular.eot',
+          'bootstrap/fonts/glyphicons-halflings-regular.woff2': 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff2',
+          'bootstrap/fonts/glyphicons-halflings-regular.svg': 'bootstrap/dist/fonts/glyphicons-halflings-regular.svg',
+          'bootstrap/fonts/glyphicons-halflings-regular.woff': 'bootstrap/dist/fonts/glyphicons-halflings-regular.woff',
+          'bootstrap/js/bootstrap-notify.js': 'remarkable-bootstrap-notify/dist/bootstrap-notify.js',
+          'font-awesome/css/font-awesome.min.css': 'fontawesome/css/font-awesome.min.css',
+          'font-awesome/fonts/FontAwesome.otf': 'fontawesome/fonts/FontAwesome.otf',
+          'font-awesome/fonts/fontawesome-webfont.eot': 'fontawesome/fonts/fontawesome-webfont.eot',
+          'font-awesome/fonts/fontawesome-webfont.svg': 'fontawesome/fonts/fontawesome-webfont.svg',
+          'font-awesome/fonts/fontawesome-webfont.ttf': 'fontawesome/fonts/fontawesome-webfont.ttf',
+          'font-awesome/fonts/fontawesome-webfont.woff': 'fontawesome/fonts/fontawesome-webfont.woff',
+          'font-awesome/fonts/fontawesome-webfont.woff2': 'fontawesome/fonts/fontawesome-webfont.woff2'
         }
       }
     }

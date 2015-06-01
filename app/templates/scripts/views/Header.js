@@ -1,6 +1,6 @@
-define(['require'], function(require){
+define(['require', 'hbs!tmpl/site/header'], function(require, tmpl){
   'use strict';
-  var tmpl = '<div><center><h1> Header here !!! </h1></center></div>';
+
   var vHeader = Marionette.LayoutView.extend({
     template: tmpl,
     templateHelpers: function() {},

@@ -1,6 +1,6 @@
-define(['require'], function(require){
+define(['require', 'hbs!tmpl/site/footer'], function(require, tmpl){
   'use strict';
-  var tmpl = '<div><center> &copy Footer Here !!! </center></div>';
+
   var vFooter = Marionette.LayoutView.extend({
     template: tmpl,
     templateHelpers: function() {},

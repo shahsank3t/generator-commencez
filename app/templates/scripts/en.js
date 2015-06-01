@@ -8,7 +8,9 @@
     Globalize.addCultureInfo("en", {
       messages: {
         // Form labels, Table headers etc
-        lbl: {},
+        lbl: {
+          localizedLabel: 'Localized Label'
+        },
         btn: {},
         // h1, h2, h3, fieldset, title
         h: {},

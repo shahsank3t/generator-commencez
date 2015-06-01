@@ -22,19 +22,38 @@ define(['require', 'modules/Vent', 'globalize', 'gblMessages/message/en'], funct
   localization.tt = function (label) {
     var ret = label;
 
-    var str = Globalize.localize(label, localization.culture);
+    var str = localization.localize(label, localization.culture);
     if (typeof str !== 'undefined') {
       return str;
     }
 
     if (localization.culture !== 'en') {
       if (typeof localization.culture !== 'undefined') {
-        ret = (typeof Globalize.localize(label, "en") === 'undefined') ? label : Globalize.localize(label, "en");
+        ret = (typeof localization.localize(label, "en") === 'undefined') ? label : localization.localize(label, "en");
       } else {
-        ret = Globalize.localize(label, "en");
+        ret = localization.localize(label, "en");
       }
     }
     return ret;
+  };
+
+  localization.localize = function(key, culture) {
+    return localization.byString(Globalize.findClosestCulture(culture).messages, key) || Globalize.cultures["default"].messages[key];
+  };
+
+  localization.byString = function(o, s) {
+    s = s.replace(/\[(\w+)\]/g, '.$1'); // convert indexes to properties
+    s = s.replace(/^\./, ''); // strip a leading dot
+    var a = s.split('.');
+    while (a.length) {
+      var n = a.shift();
+      if (n in o) {
+        o = o[n];
+      } else {
+        return;
+      }
+    }
+    return o;
   };
 
   localization.formatCurrency = function (label) {
@@ -55,20 +74,14 @@ define(['require', 'modules/Vent', 'globalize', 'gblMessages/message/en'], funct
   localization.chooseCulture = function (culture) {
     var dfd = $.Deferred();
     dfd.done(function (validationMessages) {
-      require(['validationEngine'], function () {
-        setCulture(culture);
-        validationMessages.setupMessages();
-        vent.trigger('Layouts:rerender');
-      });
+      setCulture(culture);
+      vent.trigger('Layouts:rerender');
     });
     switch (culture) {
       default:
         require(['gblMessages/message/en'], function () {
-          require(['validationEngineEn'], function (validationMessages) {
-            dfd.resolve(validationMessages);
-            console.log('Language Changed to en');
-          });
-          bootbox.setLocale('en');
+          dfd.resolve();
+          console.log('Language Changed to en');
         });
         break;
     }

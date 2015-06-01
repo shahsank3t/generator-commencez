@@ -9,6 +9,106 @@ body{
   margin: 0;
   padding: 0;
 }
+
+/**
+ * Bootstrap Notification
+ */
+.notifications {
+  position: fixed;
+  z-index: 9999;
+}
+
+/* Positioning */
+.notifications.top-right {
+  right: 10px;
+  top: 25px;
+}
+
+.notifications.top-left {
+  left: 10px;
+  top: 25px;
+}
+
+.notifications.bottom-left {
+  left: 10px;
+  bottom: 25px;
+}
+
+.notifications.bottom-right {
+  right: 10px;
+  bottom: 25px;
+}
+
+/* Notification Element */
+.notifications > div {
+  position: relative;
+  margin: 5px 0px;
+}
+
+.error-notification {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.displayNone {
+  display: none;
+}
+
+.row-margin-bottom {
+  margin-bottom: 20px;
+}
+
+/* Bootsrap Extended */
+.table-borderless > thead > tr > th,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > tbody > tr > td,
+.table-borderless > tfoot > tr > td {
+  border:none;
+}
+
+.backgrid .ascending .sort-caret {
+  vertical-align: baseline;
+  border-top: 0;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid;
+  border-left: 4px solid transparent;
+}
+
+.backgrid .descending .sort-caret {
+  vertical-align: super;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-bottom: 0;
+  border-left: 4px solid transparent;
+}
+
+select {
+  padding: 3px 6px;
+  border: 2px #53c749 solid;
+  background-color: #fff;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+fieldset {
+  border: 1px solid #CCC;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-size: 13px;
+  padding: 0 7px;
+}
+
+[data-error]{
+  color: red;
+}
+
 .page{
   min-height: 100%;
 }
@@ -16,7 +116,6 @@ body{
   background: #205081;
   border: 10px;
   padding: 3px;
-  height: 35px;
   color: white;
 }
 #header h1{

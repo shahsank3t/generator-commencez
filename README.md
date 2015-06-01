@@ -11,6 +11,10 @@ Stack
     * jQuery: http://jquery.com/
     * Require: http://requirejs.org/
     * Underscore: http://underscorejs.org
+    * Handlebars: http://handlebarsjs.com
+    * Bootstrap
+    * Bootbox
+    * Font-Awesome
 - Tooling: 
     * Yeoman: http://yeoman.io/
     * Bower: http://bower.io/
@@ -32,12 +36,22 @@ To install Yeoman, Bower and Grunt run:
 
 Install commencez generator
 
-    $ npm install (-g) generator-commencez
+    $ npm install -g generator-commencez
 
 
 Bootstrap project
 -----------------
-To bootstrap a new project simply run:
+To bootstrap a new project:
+
+First, create your project directory:
+    
+    $ mkdir demo-app
+
+Go to your project directory:
+    
+    $ cd demo-app
+
+Now simply run:
 
     $ yo commencez
 

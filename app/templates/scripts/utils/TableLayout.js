@@ -11,7 +11,7 @@ define([
   'use strict';
 
 
-  var TablelayoutTmpl = '<div class="clearfix">'+
+  var TablelayoutTmpl = '<div><div class="clearfix">'+
                           '<div class="form-group pull-right no-margin">'+
                             '<label class="select">'+
                               '<select data-id="pageSize" class="form-control">'+
@@ -30,9 +30,9 @@ define([
                         '<div class="row">'+
                           '<div data-id="r_footerRecords" class="col-sm-6 margin-top-10"></div>'+
                           '<div data-id="r_pagination" class="col-sm-6 text-right"></div>'+
-                        '</div>';
+                        '</div></div>';
 
-  var TableLayout = Backbone.Marionette.Layout.extend(
+  var TableLayout = Marionette.LayoutView.extend(
     /** @lends TableLayout */
     {
       _viewName: 'TableLayout',

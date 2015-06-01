@@ -95,7 +95,9 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.mkdir(_rootDir + 'styles');
   this.mkdir(_rootDir + 'images');
   this.mkdir(_rootDir + 'libs');
+  this.mkdir(_rootDir + 'libs/other');
   this.mkdir(_rootDir + 'templates');
+  this.mkdir(_rootDir + 'templates/site');
   this.mkdir(_rootDir + 'META-INF');
   this.mkdir(_rootDir + 'WEB-INF');
 
@@ -116,6 +118,11 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.copy('app/robots.txt', _rootDir + 'robots.txt');
   this.copy('app/htaccess', _rootDir + '.htaccess');
 
+  this.copy('scripts/lib/require-handlebars-plugin/js/handlebars.js', 'WebContent/libs/other/require-handlebars-plugin/js/handlebars.js');
+  this.copy('scripts/lib/require-handlebars-plugin/js/hbs.js', 'WebContent/libs/other/require-handlebars-plugin/js/hbs.js');
+  this.copy('scripts/lib/require-handlebars-plugin/js/json2.js', 'WebContent/libs/other/require-handlebars-plugin/js/json2.js');
+  this.copy('scripts/lib/require-handlebars-plugin/js/i18nprecompile.js', 'WebContent/libs/other/require-handlebars-plugin/js/i18nprecompile.js');
+
   this.copy('scripts/collection/BaseCollection.js', _mainJsDir + 'collection/BaseCollection.js');
   this.copy('scripts/collection/VModelList.js', _mainJsDir + 'collection/VModelList.js');
   
@@ -130,10 +137,15 @@ Generator.prototype.setupEnv = function setupEnv() {
 
   this.copy('scripts/modules/Vent.js', _mainJsDir + 'modules/Vent.js');
   this.copy('scripts/modules/Acl.js', _mainJsDir + 'modules/Acl.js');
+  this.copy('scripts/modules/Helpers.js', _mainJsDir + 'modules/Helpers.js');
 
   this.copy('scripts/views/Dashboard.js', _mainJsDir + 'views/site/Dashboard.js');
   this.copy('scripts/views/Header.js', _mainJsDir + 'views/site/Header.js');
   this.copy('scripts/views/Footer.js', _mainJsDir + 'views/site/Footer.js');
+
+  this.copy('scripts/templates/header.html', 'WebContent/templates/site/header.html');
+  this.copy('scripts/templates/footer.html', 'WebContent/templates/site/footer.html');
+  this.copy('scripts/templates/dashboard.html', 'WebContent/templates/site/dashboard.html');
 
   this.copy('scripts/en.js', _rootDir + 'scripts/globalize/message/en.js');
   
