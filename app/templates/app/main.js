@@ -117,7 +117,7 @@ require.config({
     'i18nprecompile': '../libs/other/require-handlebars-plugin/js/i18nprecompile',
     'json2': '../libs/other/require-handlebars-plugin/js/json2',
     'hbs': '../libs/other/require-handlebars-plugin/js/hbs',
-    'tmpl': '../templates'
+    'tmpl': 'templates'
   },
 
   /**

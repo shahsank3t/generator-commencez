@@ -83,6 +83,7 @@ Generator.prototype.setupEnv = function setupEnv() {
 
   // templates
   this.mkdir(_rootDir + 'scripts/templates');
+  this.mkdir(_rootDir + 'scripts/templates/site');
 
   //html
   this.template('app/index.html', _rootDir + 'index.html');
@@ -96,8 +97,6 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.mkdir(_rootDir + 'images');
   this.mkdir(_rootDir + 'libs');
   this.mkdir(_rootDir + 'libs/other');
-  this.mkdir(_rootDir + 'templates');
-  this.mkdir(_rootDir + 'templates/site');
   this.mkdir(_rootDir + 'META-INF');
   this.mkdir(_rootDir + 'WEB-INF');
 
@@ -115,8 +114,6 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.copy('app/Router.js', _rootDir + 'scripts/router/Router.js');
   this.copy('app/default.css', _rootDir + 'styles/default.css');
   this.copy('app/404.html', _rootDir + '404.html');
-  this.copy('app/robots.txt', _rootDir + 'robots.txt');
-  this.copy('app/htaccess', _rootDir + '.htaccess');
 
   this.copy('scripts/lib/require-handlebars-plugin/js/handlebars.js', 'WebContent/libs/other/require-handlebars-plugin/js/handlebars.js');
   this.copy('scripts/lib/require-handlebars-plugin/js/hbs.js', 'WebContent/libs/other/require-handlebars-plugin/js/hbs.js');
@@ -143,9 +140,9 @@ Generator.prototype.setupEnv = function setupEnv() {
   this.copy('scripts/views/Header.js', _mainJsDir + 'views/site/Header.js');
   this.copy('scripts/views/Footer.js', _mainJsDir + 'views/site/Footer.js');
 
-  this.copy('scripts/templates/header.html', 'WebContent/templates/site/header.html');
-  this.copy('scripts/templates/footer.html', 'WebContent/templates/site/footer.html');
-  this.copy('scripts/templates/dashboard.html', 'WebContent/templates/site/dashboard.html');
+  this.copy('scripts/templates/header.html', _mainJsDir + 'templates/site/header.html');
+  this.copy('scripts/templates/footer.html', _mainJsDir + 'templates/site/footer.html');
+  this.copy('scripts/templates/dashboard.html', _mainJsDir + 'templates/site/dashboard.html');
 
   this.copy('scripts/en.js', _rootDir + 'scripts/globalize/message/en.js');
   

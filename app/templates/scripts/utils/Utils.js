@@ -1,4 +1,4 @@
-define(['require'], function(require) {
+define(['require', 'bootstrap.notify'], function(require) {
   'use strict';
 
   var Utils = {};
@@ -54,6 +54,69 @@ define(['require'], function(require) {
       throw new Error("ERROR 401 occured.\n You might want to change this error from here.");
       // window.location.href = "login.jsp" + location.hash;
     }
+  };
+
+  Utils.notifyError = function(message){
+    $.notify({
+      // options
+      icon: 'fa fa-warning',
+      message: message
+    },{
+      // settings
+      element: 'body',
+      position: null,
+      type: 'danger',
+      animate: {
+        enter: 'animated fadeInDown',
+        exit: 'animated fadeOutUp'
+      },
+      placement: {
+        from: "top",
+        align: "right"
+      },
+    });
+  };
+
+  Utils.notifySuccess = function(message){
+    $.notify({
+      // options
+      icon: 'fa fa-check',
+      message: message
+    },{
+      // settings
+      element: 'body',
+      position: null,
+      type: 'success',
+      animate: {
+        enter: 'animated fadeInDown',
+        exit: 'animated fadeOutUp'
+      },
+      placement: {
+        from: "top",
+        align: "right"
+      },
+    });
+  };
+
+  Utils.notifyInfo = function(message){
+    $.notify({
+      // options
+      icon: 'fa fa-info',
+      message: message
+    },{
+      // settings
+      element: 'body',
+      position: null,
+      type: 'info',
+      animate: {
+        enter: 'animated fadeInDown',
+        exit: 'animated fadeOutUp'
+      },
+      placement: {
+        from: "top",
+        align: "right"
+      },
+    });
   };
 
   return Utils;
